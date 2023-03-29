@@ -1,0 +1,25 @@
+{
+  "labels": [
+    {
+      "unique_code": "label",
+      "name_en": "Label",
+      "criterias": null,
+      "children": [
+        {
+          "unique_code": "label_1",
+          "name_en": "Label 1",
+          "criterias": "Find a definition for the criteria here",
+          "children": []
+        },
+        {
+          "unique_code": "label_2",
+          "name_en": "Label 2",
+          "criterias": null,
+          "children": []
+        }
+      ]
+    }
+  ],
+  "label_type": "single_label",
+  "data_type": "image"
+}

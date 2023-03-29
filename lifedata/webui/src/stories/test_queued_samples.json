@@ -1,0 +1,9 @@
+{
+  "queued_samples": [
+    {
+      "sample_id": "test_sample",
+      "queue_name": "example_queue",
+      "requested_by": "example_annotator"
+    }
+  ]
+}

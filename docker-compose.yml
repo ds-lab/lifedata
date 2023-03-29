@@ -1,0 +1,60 @@
+version: "3.7"
+
+x-webui-base: &webui-base
+  build:
+    context: lifedata/webui/
+    args:
+      # Skip building of the static bundles, as this is super slow and not
+      # needed for development. We can rely on the mounted code from the
+      # repository.
+      BUILD_BUNDLE: 0
+      API_URL: http://localhost:8000
+  environment:
+    - NODE_ENV=development
+  volumes:
+    - "./lifedata/webui:/app/"
+    - "webui-node-modules:/app/node_modules/"
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: "lifedata"
+      POSTGRES_PASSWORD: "password-for-development"
+
+  webapi:
+    build: .
+    command: "sh -c 'alembic upgrade head && uvicorn lifedata.webapi.main:app --host 0.0.0.0 --reload --port=8000'"
+    environment:
+      ALLOW_CORS_ORIGINS: "http://localhost:3000"
+      APP_DATABASE_URL: "postgresql://lifedata:password-for-development@db/lifedata"
+      # Configure to use better-exceptions on unhandled exceptions
+      BETTER_EXCEPTIONS: 1
+    depends_on:
+      - db
+    volumes:
+      - "./:/app/"
+    ports:
+      - "8000:8000"
+
+  webui:
+    <<: *webui-base
+    command: "yarn start"
+    # Required because of an issue in react-scripts. See here:
+    # https://stackoverflow.com/questions/60895246/react-app-exiting-in-docker-container-with-exit-code-0
+    stdin_open: true
+    environment:
+      REACT_APP_API_URL: http://localhost:8000
+    ports:
+      - "3000:3000"
+
+  storybook:
+    <<: *webui-base
+    command: "yarn run storybook"
+    environment:
+      PORT: "3001"
+    ports:
+      - "3001:3001"
+
+volumes:
+  webui-node-modules:

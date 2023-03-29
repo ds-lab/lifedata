@@ -1,0 +1,7 @@
+/node_modules/
+
+# You can ignore the build directory here, but then you need to make sure
+# yourself during deployment
+# to have a valid build available. Therefore we recommend for convenience to
+# add the `build` directory to version control.
+/build/

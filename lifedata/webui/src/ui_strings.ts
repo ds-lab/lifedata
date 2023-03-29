@@ -1,0 +1,23 @@
+export type StringConfig = {
+  project_title: string;
+  sample_title: string;
+  label_request_text: string;
+  label_request_text_2: string;
+  sample_loading_message: string;
+  sample_not_found_message: string;
+  sample_not_loaded_message: string;
+  all_samples_annotated: string;
+  skip_button_hover_text: string;
+  skip_button_text: string;
+  annotate_button_text: string;
+  label_search_bar_text: string;
+  selected_labels: string;
+  no_initial_samples: string;
+  annotation_stored_text: string;
+  annotation_storage_failed_text: string;
+  consulting_text: string;
+  consulting_failed_text: string;
+  sample_skipped_text: string;
+  sample_skipped_fail_text: string;
+  logout_text: string;
+};

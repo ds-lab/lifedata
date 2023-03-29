@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lifedata"
+version = "0.1.0"
+authors = [
+  { name="DS Lab, University of Augsburg" }
+]
+description = "A Python Framework for Tracable Active Learning Projects."
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/ds-lab/lifedata"
+"Bug Tracker" = "https://github.com/ds-lab/lifedata/issues"

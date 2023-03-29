@@ -1,0 +1,23 @@
+{
+  "project_title": "LIFEDATA",
+  "sample_title": "Image-Sample-ID",
+  "label_request_text": "Select your labels!",
+  "label_request_text_2": "Select matching labels. It is possible to select multiple labels",
+  "sample_loading_message": "New sample is loading...",
+  "sample_not_found_message": "No file was found for the actual sample id",
+  "sample_not_loaded_message": "Sample could not be loaded",
+  "all_samples_annotated": "Congratulation all samples were annotated",
+  "skip_button_hover_text": "Skip an annotation if you are not sure about the label.",
+  "skip_button_text": "Skip Annotation",
+  "annotate_button_text": "Store annotation",
+  "label_search_bar_text": "Search for labels",
+  "selected_labels": "Selected labels",
+  "no_initial_samples": " Found no samples to annotate!",
+  "annotation_stored_text": "Annotation saved",
+  "annotation_storage_failed_text": "The annotation could not be saved. Please try again.",
+  "consulting_text": "Annotation saved and second opinion requested",
+  "consulting_failed_text": "The annotation could not be saved. Please try again.",
+  "sample_skipped_text": "Annotation skipped",
+  "sample_skipped_fail_text": "The skip could not be saved. Please try again.",
+  "logout_text": "You have successfully logged out"
+}

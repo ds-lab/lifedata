@@ -1,0 +1,27 @@
+name: lifedata
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - yaml
+  - pip:
+      # Install the local package as development version and all it's extra
+      # dependencies listed in `dev` (like dependencies for testing).
+      - "-e .[dev]"
+
+      - httpx
+      - setuptools_scm
+      - sphinx
+      - sphinx-autodoc-typehints
+      - nbsphinx
+      - sphinxcontrib-plantuml
+      - sphinx-typlog-theme
+      - sphinxcontrib-drawio
+      - m2r2
+      - pre-commit
+      - twine
+
+  # Run `ptw` to re-run the tests on file changes.
+  - pytest-watch
